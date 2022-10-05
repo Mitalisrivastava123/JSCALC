@@ -6,48 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .calculatorForm
+        {
+            background:pink;
+            width:200px;
+            height:200px;
+            padding:20px;
+        }
+        .btn1
+        {
+            width:40px;
+            height:40px;
+            margin:2px;
+            color:cadetblue;
+        }
+    </style>
 </head>
 
 <body>
-<div class="main">
-    <form name="calculatorForm">
-        <div class="screen">
-            <input type="text" name="screen" readonly value="" id="res">
-        </div>
-        <div class="btns">
-            <input type="button" name="clear" value="clear" onclick="clear1()">
-            
-        </div>
-        <div class="btn">
-            <input type="button" name="num1" value="1" id="first" onclick="valueButton(this)">
-            <input type="button" name="num2" value="2" id="second" onclick="valueButton(this)">
-            <input type="button" name="num3" value="3" onclick="valueButton(this)">
-            <input type="button" name="plus" id="ope" value="+" >
-        </div>
-        <div class="btn">
-            <input type="button" name="num4" value="4" onclick="valueButton(this)">
-            <input type="button" name="num5" value="5" onclick="valueButton(this)">
-            <input type="button" name="num6" value="6" onclick="valueButton(this)">
-            <input type="button" name="sub" id="ope" value="-" >
-        </div>
-    
-            <div class="btn">
-                <input type="button" name="num7" value="7" onclick="valueButton(this)">
-                <input type="button" name="num8" value="8" onclick="valueButton(this)">
-                <input type="button" name="num9" value="9" onclick="valueButton(this)">
-                <input type="button" name="mul" id="ope" value="*" >
+    <div class="main">
+        <form name="calculatorForm" class="calculatorForm">
+            <div class="screen">
+                <input type="text" name="screen" readonly value="" id="res">
             </div>
-            <div class="btn">
-                <input type="button" name="num0" value="0" onclick="valueButton(this)">
-                <input type="button" name="div" value="/" onclick="valueButton(this)">
-                <input type="button" name="equal" value="=" onclick="cal()" >
-            
-            </div>
-        </div>
-    </form>
-</div>
+            <div class="btns">
+                <input type="button" name="clear" value="clear" onclick="clear1()">
 
-    
+            </div>
+            <div class="btn">
+                <input type="button" name="num1" value="1" class="btn1" id="first" onclick="valueButton(this)">
+                <input type="button" name="num2" value="2" class="btn1" id="second" onclick="valueButton(this)">
+                <input type="button" name="num3" value="3" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="plus" id="ope" class="btn1" value="+" onclick="oper(value)">
+            </div>
+            <div class="btn">
+                <input type="button" name="num4" value="4" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="num5" value="5" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="num6" value="6" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="sub" id="ope" value="-" class="btn1" onclick="oper(value)">
+            </div>
+
+            <div class="btn">
+                <input type="button" name="num7" value="7" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="num8" value="8" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="num9" value="9" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="mul" id="ope" value="*"  class="btn1" onclick="oper(value)">
+            </div>
+            <div class="btn">
+                <input type="button" name="num0" value="0" class="btn1" onclick="valueButton(this)">
+                <input type="button" name="div" value="/" class="btn1" onclick="oper(value)">
+                <input type="button" name="equal" value="=" class="btn1" onclick="cal()">
+
+            </div>
+    </div>
+    </form>
+    </div>
+
+
     <script src="./script.js"></script>
 </body>
 

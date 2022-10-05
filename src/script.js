@@ -7,36 +7,84 @@ function valueButton(e) {
 function clear1() {
     calculatorForm.screen.value = '';
 }
-var operator = {add:"+",sub:"-",mul:"*",div:"/"};
-// var m1 = {1: "1",2:"2",3:"3",4:"4",5:"5"};
-// var m2 = {6:"6",7:"7",8:"8",9:"9" };
+var operator = { add: "+", sub: "-", mul: "*", div: "/" };
+var m1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var m2 = ["+", "-", "*", "/"];
+
+var m3 = [];
+var m4 = [];
+
+function oper(val) {
+    var opx = document.getElementById("res").value;
+    m3.push(opx);
+    // console.log(m3);
+    m4.push(val)
+    // console.log(m4);
+    document.getElementById("res").value = ''
+}
 
 function cal() {
-    var opr1 = parseFloat(document.getElementById("first").value);
-    var opr2 = parseFloat(document.getElementById("second").value);
-    // var ope = document.getElementById("ope").value;
-   
+    // console.log(m3);
+    // var m3 = document.getElementById("m3").value;
+    // console.log(m3);
+    var opx = document.getElementById("res").value;
+    m3.push(opx);
+    // console.log(m3);
+    for (i = 0; i < m1.length; i++) {
 
-    if (operator.add) {
-     var res = parseInt(opr1) + parseInt(opr2);
-     console.log(res);
-    
+        if (m2[0] == "+") {
+
+            var results = 0;
+            results = parseInt(m3[0]) + parseInt(m3[1]);
+            document.getElementById("res").value=results;
+            // console.log(results);
+            // document.getElementById("res").value = res;
+            // console.log(m3[1]);
+            m1.shift();
+            m1.shift();
+            m1.unshift(res);
+            m2.shift();
+        }
+        if (m2[0] == "-") {
+            var results = 0;
+            results = parseInt(m3[0]) - parseInt(m3[1]);
+            // console.log(results);
+            document.getElementById("res").value=results;
+            // document.getElementById("res").value = res;
+            // console.log(m3[1]);
+            m1.shift();
+            m1.shift();
+            m1.unshift(res);
+            m2.shift();
+        }
+        if (m2[0] == "*") {
+            var results = 0;
+            results = parseInt(m3[0]) * parseInt(m3[1]);
+            // console.log(results);
+            document.getElementById("res").value=results;
+            // document.getElementById("res").value = res;
+            // console.log(m3[1]);
+            m1.shift();
+            m1.shift();
+            m1.unshift(res);
+            m2.shift();
+        }
+        if (m2[0] == "/") {
+            var results = 0;
+            results = parseInt(m3[0]) / parseInt(m3[1]);
+            // console.log(results);
+            document.getElementById("res").value=results;
+            // document.getElementById("res").value = res;
+            // console.log(m3[1]);
+            m1.shift();
+            m1.shift();
+            m1.unshift(res);
+            m2.shift();
+        }
+
     }
-    if(operator.sub)
-    {
-        var res2 = parseInt(opr1) - parseInt(opr2);
-        console.log(res2);
-    }
-    if(operator.mul)
-    {
-        var res3 = parseInt(opr1) * parseInt(opr2);
-        console.log(res3);
-    }
-    if(operator.div)
-    {
-        var res4 = parseInt(opr1) / parseInt(opr2);
-        console.log(res4);
-    }
+    m3 = [];
+    m4 = [];
 }
 
 
