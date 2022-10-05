@@ -45,7 +45,7 @@ function cal() {
             m1.unshift(res);
             m2.shift();
         }
-        if (m2[0] == "-") {
+        else if (m2[0] == "-") {
             var results = 0;
             results = parseInt(m3[0]) - parseInt(m3[1]);
             // console.log(results);
@@ -57,7 +57,7 @@ function cal() {
             m1.unshift(res);
             m2.shift();
         }
-        if (m2[0] == "*") {
+       else  if (m2[0] == "*") {
             var results = 0;
             results = parseInt(m3[0]) * parseInt(m3[1]);
             // console.log(results);
@@ -69,7 +69,7 @@ function cal() {
             m1.unshift(res);
             m2.shift();
         }
-        if (m2[0] == "/") {
+       else  if (m2[0] == "/") {
             var results = 0;
             results = parseInt(m3[0]) / parseInt(m3[1]);
             // console.log(results);
