@@ -17,8 +17,9 @@ var m4 = [];
 function oper(val) {
     var opx = document.getElementById("res").value;
     m3.push(opx);
-    // console.log(m3);
+    console.log(m3);
     m4.push(val)
+    
     // console.log(m4);
     document.getElementById("res").value = ''
 }
@@ -31,57 +32,57 @@ function cal() {
     m3.push(opx);
     // console.log(m3);
     for (i = 0; i < m1.length; i++) {
+        var results = 0;
+        if (m4[0] == "+") {
 
-        if (m2[0] == "+") {
-
-            var results = 0;
+          
             results = parseInt(m3[0]) + parseInt(m3[1]);
-            document.getElementById("res").value=results;
+            document.getElementById("res").value = results;
             // console.log(results);
             // document.getElementById("res").value = res;
             // console.log(m3[1]);
-            m1.shift();
-            m1.shift();
-            m1.unshift(res);
-            m2.shift();
+            m3.shift();
+            m3.shift();
+            m3.unshift(res);
+            m4.shift();
         }
-        else if (m2[0] == "-") {
-            var results = 0;
+        else if(m4[0] == "-")
+        {
+         
             results = parseInt(m3[0]) - parseInt(m3[1]);
+            document.getElementById("res").value = results;
             // console.log(results);
-            document.getElementById("res").value=results;
             // document.getElementById("res").value = res;
             // console.log(m3[1]);
-            m1.shift();
-            m1.shift();
-            m1.unshift(res);
-            m2.shift();
+            m3.shift();
+            m3.shift();
+            m3.unshift(res);
+            m4.shift(); 
         }
-       else  if (m2[0] == "*") {
-            var results = 0;
+        else if(m4[0] == '*')
+        {
             results = parseInt(m3[0]) * parseInt(m3[1]);
+            document.getElementById("res").value = results;
             // console.log(results);
-            document.getElementById("res").value=results;
             // document.getElementById("res").value = res;
             // console.log(m3[1]);
-            m1.shift();
-            m1.shift();
-            m1.unshift(res);
-            m2.shift();
+            m3.shift();
+            m3.shift();
+            m3.unshift(res);
+            m4.shift();   
         }
-       else  if (m2[0] == "/") {
-            var results = 0;
+        else if(m4[0] == "/")
+        {
             results = parseInt(m3[0]) / parseInt(m3[1]);
+            document.getElementById("res").value = results;
             // console.log(results);
-            document.getElementById("res").value=results;
             // document.getElementById("res").value = res;
             // console.log(m3[1]);
             m1.shift();
             m1.shift();
             m1.unshift(res);
-            m2.shift();
+            m2.shift();  
         }
-
     }
     m3 = [];
     m4 = [];
